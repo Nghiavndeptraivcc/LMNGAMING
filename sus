@@ -4551,18 +4551,11 @@ end)
         end)
     end)
 
-
-    local Section = M:AddSection({
-        Name = "Elite Hunter"
-    })
-
-    
-    
     local Section = M:AddSection({
         Name = "Other Menu"
     })
 
-local EliteProgress = SV:AddLabel("")
+local EliteProgress = M:AddLabel("")
 
     spawn(function()
         pcall(function()
