@@ -4713,6 +4713,10 @@ M:AddToggle({
         end
         end)
 
+        local Section = M:AddSection({
+            Name = "Dough King Menu"
+        })
+
         M:AddToggle({
             Name = "Auto Katakuri",
             Default = false,
@@ -4822,9 +4826,6 @@ M:AddToggle({
             end
         end)
         
-        local Section = M:AddSection({
-            Name = "Dough King Menu"
-        })
 
         M:AddToggle({
             Name = "Auto Spawn Katakuri",
