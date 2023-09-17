@@ -4552,7 +4552,7 @@ end)
     end)
 
 
-    local Section = SV:AddSection({
+    local Section = M:AddSection({
         Name = "Elite Hunter"
     })
 
@@ -4653,52 +4653,28 @@ local EliteProgress = SV:AddLabel("")
         end    
     })
     spawn(function()
-
         while wait() do
-       
         pcall(function()
-       
          if _G.AutoFactory then
-       
          if game:GetService("Workspace").Enemies:FindFirstChild("Core") then
-       
          for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-       
          if v.Name == "Core" and v.Humanoid.Health > 0 then
-       
          repeat task.wait()
-       
          AutoHaki()
-       
          EquipWeapon(_G.SelectWeapon)
-       
          topos(CFrame.new(448.46756, 199.356781, -441.389252))
-       
          game:GetService("VirtualUser"):CaptureController()
-       
          game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
-       
          until v.Humanoid.Health <= 0 or _G.AutoFactory == false
-       
          end
-       
          end
-       
          else
-       
           topos(CFrame.new(448.46756, 199.356781, -441.389252))
-       
          end
-       
          end
-       
-         end)
-       
+         end)  
         end
-       
-        end)
-       
-       end
+        end) 
 
 
 M:AddToggle({
@@ -5885,51 +5861,6 @@ local CavandisPos = CFrame.new(5314.58203, 22.8796749, -125.942276, 1, 1.6963919
             end
         end
     end)
-
-
-    IQ:AddToggle({
-        Name = "Auto Raid Pirates",
-        Default = false,
-        Callback = function(Value)
-            _G.RaidPirate = Value
-            StopTween(_G.RaidPirate)
-        end    
-    })
-
-    spawn(function()
-        while wait() do
-            if _G.RaidPirate then
-                pcall(function()
-                    local CFrameBoss = CFrame.new(-5496.17432, 313.768921, -2841.53027, 0.924894512, 7.37058015e-09, 0.380223751, 3.5881019e-08, 1, -1.06665446e-07, -0.380223751, 1.12297109e-07, 0.924894512)
-                    if (CFrame.new(-5539.3115234375, 313.800537109375, -2972.372314453125).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 500 then
-                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                            if _G.RaidPirate and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
-                                if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 2000 then
-                                    repeat wait()
-                                        AutoHaki()
-                                        EquipWeapon(_G.SelectWeapon)
-                                        v.HumanoidRootPart.CanCollide = false
-                                        v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
-                                        topos(v.HumanoidRootPart.CFrame * Pos)
-                                        Click()
-                                    until v.Humanoid.Health <= 0 or not v.Parent or not _G.RaidPirate
-                                end
-                            end
-                        end
-                    else
-                        if BypassTP then
-                        if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameBoss.Position).Magnitude > 1500 then
-                        BTP(CFrameBoss)
-                        elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameBoss.Position).Magnitude < 1500 then
-                        topos(CFrameBoss)
-                        end
-                        end
-                    end
-                end)
-            end
-        end
-        end)
-
 
         local Section = IQ:AddSection({
             Name = "Twin Hook"
