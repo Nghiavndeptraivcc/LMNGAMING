@@ -4550,19 +4550,12 @@ end)
             end
         end)
     end)
-
-
-    local Section = SV:AddSection({
-        Name = "Elite Hunter"
-    })
-
-    
     
     local Section = M:AddSection({
         Name = "Other Menu"
     })
 
-local EliteProgress = SV:AddLabel("")
+local EliteProgress = M:AddLabel("")
 
     spawn(function()
         pcall(function()
@@ -4653,53 +4646,28 @@ local EliteProgress = SV:AddLabel("")
         end    
     })
     spawn(function()
-
         while wait() do
-       
         pcall(function()
-       
          if _G.AutoFactory then
-       
          if game:GetService("Workspace").Enemies:FindFirstChild("Core") then
-       
          for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-       
          if v.Name == "Core" and v.Humanoid.Health > 0 then
-       
          repeat task.wait()
-       
          AutoHaki()
-       
          EquipWeapon(_G.SelectWeapon)
-       
          topos(CFrame.new(448.46756, 199.356781, -441.389252))
-       
          game:GetService("VirtualUser"):CaptureController()
-       
          game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
-       
-         until v.Humanoid.Health <= 0 or _G.AutoFactory == false
-       
-         end
-       
-         end
-       
-         else
-       
-          topos(CFrame.new(448.46756, 199.356781, -441.389252))
-       
-         end
-       
-         end
-       
-         end)
-       
-        end
-       
+         until v.Humanoid.Health <= 0 or _G.AutoFactory == false    
+         end   
+         end   
+         else     
+          topos(CFrame.new(448.46756, 199.356781, -441.389252))    
+         end   
+         end     
+         end)     
+        end      
         end)
-       
-       end
-
 
 M:AddToggle({
         Name = "Auto Raid Pirates",
