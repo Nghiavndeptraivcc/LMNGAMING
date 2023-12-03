@@ -388,8 +388,8 @@ MainStroke.Color = Color3.fromRGB(210, 210, 210)
 MainStroke.Name = "MainStroke"
 MainStroke.Parent = Main
 
-SkipPlayer.Activated:Connect(find_target)
-SkipPlayer.Activated:Connect(
+SkipPlayer.MouseButton1Down:Connect(find_target)
+SkipPlayer.MouseButton1Down:Connect(
     function()
         while wait() and uwu and uwu.Character do
             find_target()
